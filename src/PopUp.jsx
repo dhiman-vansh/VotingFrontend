@@ -39,6 +39,12 @@ export default function PopUp(props) {
     console.log("Name : ", name);
   };
 
+  const postVote = async () => {
+  
+    
+    setOpen(false);
+  };
+
   return (
     <>
       <Button onClick={handleOpen}>
@@ -76,7 +82,7 @@ export default function PopUp(props) {
             <Button autoFocus onClick={handleClose}>
               No
             </Button>
-            <Button onClick={handleClose} autoFocus>
+            <Button onClick={postVote} autoFocus>
               Yes
             </Button>
           </DialogActions>

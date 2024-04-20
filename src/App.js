@@ -5,6 +5,7 @@ import "./App.css";
 import particlesOptions from "./particles.json";
 import Appbar from "./Appbar";
 import CardComp from "./CardComp";
+// import FireParticles from "./ParticleBg";
 
 function App() {
   const [init, setInit] = useState(false);
@@ -26,7 +27,7 @@ function App() {
     // Fetch data from API
     async function fetchData() {
       try {
-        const response = await fetch("http://localhost:3001");
+        const response = await fetch("https://votingbackend-1mcc.onrender.com/");
         const data = await response.json();
         setData(data);
       } catch (error) {
@@ -37,11 +38,14 @@ function App() {
     fetchData();
   }, []);
 
+
+
   return (
     <div className="App">
+      {/* <FireParticles /> */}
       <Particles options={particlesOptions} />
       <Appbar />
-      <h1>Candidates for Mr. Fresher : </h1>
+      <h3>Candidates for Mr. Fresher : </h3>
       <div className="CardContainer">
         {data.map((item, index) => (
           <CardComp

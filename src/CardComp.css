@@ -1,18 +1,16 @@
 
 .card {
-    background-color: rgb(192, 252, 252);
+    background-color: #40A2D8;
     width: 300px;
     margin:  20px;
     padding: 5px;
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
 }
 
 .card:hover {
     padding: 15px;
     margin: 5px;
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
 }
 
 .card img {
@@ -45,12 +43,11 @@
 
 .card-title {
     font-size: 1.2em;
+    color:"#000000";
     font-weight: bold;
     margin-bottom: 10px;
 }
 
-.container p {
-    font-size: 1em;
-    color: #555555;
+.desc{
+    color:#F0EDCF;
 }
-

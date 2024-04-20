@@ -3,8 +3,7 @@ import "./Appbar.css";
 
 export default function Appbar() {
   return <div className="Appbar">
-    Welcome to Fresher's Party
-    Let's all votex
+      <span className="centered-text">Welcome to Fresher's Party</span>
     
     </div>;
 }

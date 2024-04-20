@@ -24,7 +24,7 @@
 }
 
 .App-link {
-    color: #61dafb;
+    color: #AF8260;
 }
 
 @keyframes App-logo-spin {
@@ -54,8 +54,8 @@
     max-width: 1080px;
     margin: 0 auto;
 }
-h1{
-    font-size: 2em;
+h3{
+    font-size: 1.4em;
     margin: 20px 0;
-    color: whitesmoke;
+    color: #F0EDCF;
 }

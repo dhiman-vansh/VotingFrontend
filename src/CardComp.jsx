@@ -13,7 +13,7 @@ export default function CardComp(props) {
           <p className="card-title">
             Candidate {props.sr}: {props.name}
           </p>
-          <p>{props.desc}</p>
+          <p className="desc">{props.desc}</p>
           <button>
             <PopUp name= {props.name} /></button>
         </div>

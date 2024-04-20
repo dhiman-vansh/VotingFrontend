@@ -1,9 +1,15 @@
-.Appbar{
-    background-color: aqua;
-    margin-top: 0px;
+.Appbar {
+    background-color: transparent;
+    color: #F0EDCF;
     display: flex;
     align-items: center;
-    height: 10vh;
-    text-align: center;
     justify-content: space-around;
-}
+    height: 10vh;
+    margin-top: 0;
+    font-size: 20px;
+    font-weight: bold;
+    font-size: 2em;
+    text-align: center; /* Center-align the text */
+  }
+  
+ 
