@@ -15,9 +15,11 @@ export default function CardComp(props) {
           <p className="card-title">
             Candidate {props.sr}: {props.name}
           </p>
-          <p className="desc">{props.desc}</p>
-          <button>
-            <PopUp sr={props.sr}  name= {props.name} /></button>
+          {/* <p className="desc">{props.desc}</p> */}
+          {props.vote === "true" ? (
+            <button className="vote"><PopUp sr={props.sr}  name= {props.name} /></button>
+          ) : null}
+          
         </div>
       </div>
     </>

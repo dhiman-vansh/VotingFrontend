@@ -51,6 +51,7 @@ export default function Candidates() {
             name={item.name}
             desc={item.description}
             img={item.img}
+            vote={"true"}
           />
         ))}
       </div>
