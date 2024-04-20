@@ -3,7 +3,9 @@ import Divider from '@mui/material/Divider';
 import "./CardComp.css";
 
 export default function CardComp(props) {
+  // console.log("Props in card comp: ", props);
   return (
+
     <>
       <div className="card">
         <img src={props.img} alt="Snapchat-157062993" border="0"></img>
@@ -15,7 +17,7 @@ export default function CardComp(props) {
           </p>
           <p className="desc">{props.desc}</p>
           <button>
-            <PopUp name= {props.name} /></button>
+            <PopUp sr={props.sr}  name= {props.name} /></button>
         </div>
       </div>
     </>

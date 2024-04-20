@@ -1,6 +1,7 @@
 import React from "react";
 import { Modal, Box, Typography, Button, DialogActions } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 // import PersonRemoveIcon from "@mui/icons-material/PersonRemove";
 import "./PopUp.css";
 
@@ -10,7 +11,7 @@ const style = {
   left: "50%",
   transform: "translate(-50%, -50%)",
   width: 300,
-  bgcolor: "background.paper",
+  bgcolor: "#ECE5B6",
   border: "2px solid #000",
   boxShadow: 24,
   p: 4,
@@ -19,10 +20,10 @@ const style = {
 export default function PopUp(props) {
   const [open, setOpen] = React.useState(false);
   const [name, setName] = React.useState("");
+  // console.log("Name : ", props.id);
   const handleOpen = () => {
     // const token = localStorage.getItem("token");
     try {
-      console.log("In try");
       setOpen(true);
     } catch (err) {
       // console.log(err);
@@ -36,11 +37,22 @@ export default function PopUp(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    postVote();
     console.log("Name : ", name);
   };
 
   const postVote = async () => {
-  
+    const token = localStorage.getItem("token");
+    if(token){
+      alert("You already voted from this device");
+    }
+    else {
+      const response  = await axios.put(`https://votingbackend-1mcc.onrender.com/${props.sr}`, {
+        name: name,
+      });
+      // localStorage.setItem("token", "voted");
+      alert(response.data == "NameError" ? "Your name does not exist in database" : "Vote Done");
+    }
     
     setOpen(false);
   };

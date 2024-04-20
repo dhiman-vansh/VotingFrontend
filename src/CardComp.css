@@ -1,6 +1,6 @@
 
 .card {
-    background-color: #40A2D8;
+    background-color: #ECE5B6;
     width: 300px;
     margin:  20px;
     padding: 5px;
@@ -49,5 +49,5 @@
 }
 
 .desc{
-    color:#F0EDCF;
+    color:black;
 }

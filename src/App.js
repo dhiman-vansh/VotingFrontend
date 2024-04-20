@@ -49,7 +49,7 @@ function App() {
       <div className="CardContainer">
         {data.map((item, index) => (
           <CardComp
-            key={index}
+            key={item._id}
             sr = {item.srNo}
             name={item.name}
             desc={item.description}
