@@ -50,7 +50,7 @@ export default function PopUp(props) {
       const response  = await axios.put(`https://votingbackend-1mcc.onrender.com/${props.sr}`, {
         name: name,
       });
-      // localStorage.setItem("token", "voted");
+      localStorage.setItem("token", "voted");
       alert(response.data == "NameError" ? "Your name does not exist in database" : "Vote Done");
     }
     
