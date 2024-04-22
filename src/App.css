@@ -54,6 +54,18 @@
     max-width: 1080px;
     margin: 0 auto;
 }
+.CardContainerResult{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    max-width:400px ;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    /* color: #F0EDCF; */
+    /* background-color: aliceblue; */
+}
+
 h3{
     font-size: 1.4em;
     margin: 20px 0;

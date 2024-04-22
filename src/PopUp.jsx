@@ -2,6 +2,8 @@ import React from "react";
 import { Modal, Box, Typography, Button, DialogActions } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import Alert from "@mui/joy/Alert";
+
 // import PersonRemoveIcon from "@mui/icons-material/PersonRemove";
 import "./PopUp.css";
 
@@ -34,7 +36,6 @@ export default function PopUp(props) {
   const handleClose = () => setOpen(false);
   const navigate = useNavigate();
 
-
   const handleSubmit = (e) => {
     e.preventDefault();
     postVote();
@@ -43,16 +44,23 @@ export default function PopUp(props) {
 
   const postVote = async () => {
     const token = localStorage.getItem("token");
-    if(token=="test1"){
+    if (token == "test1") {
       alert("You already voted from this device");
+    } else {
+      const response = await axios.put(
+        `https://votingbackend-1mcc.onrender.com/${props.sr}`,
+        {
+          name: name,
+        }
+      );
+      alert(
+        response.data == "NameError"
+          ? "Your name does not exist in database"
+          : (localStorage.setItem("token", "test1"), "Vote Done")
+      );
+      // <Alert>You already voted from this device</Alert>
     }
-    else {
-      const response  = await axios.put(`https://votingbackend-1mcc.onrender.com/${props.sr}`, {
-        name: name,
-      });
-      alert(response.data == "NameError" ? "Your name does not exist in database" : (localStorage.setItem("token", "test1"), "Vote Done"));
-    }
-    
+
     setOpen(false);
   };
 
@@ -70,8 +78,8 @@ export default function PopUp(props) {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
-        <Typography id="modal-modal-title" variant="h6" component="h2">
-            Please Enter you name : 
+          <Typography id="modal-modal-title" variant="h6" component="h2">
+            Please Enter you name :
             <form onSubmit={handleSubmit} className="addMember">
               <span>
                 {/* <label>Enter Name:</label> */}
@@ -83,8 +91,8 @@ export default function PopUp(props) {
                     setName(e.target.value);
                   }}
                 />
-                </span>
-                </form>
+              </span>
+            </form>
           </Typography>
           <Typography id="modal-modal-title" variant="h6" component="h2">
             Are you sure you want to vote for {props.name}?

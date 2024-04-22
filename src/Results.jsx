@@ -9,7 +9,6 @@ export default function Results() {
   const [init, setInit] = useState(false);
   const [data, setData] = useState([]);
 
-  
   useEffect(() => {
     // Fetch data from API
     async function fetchData() {
@@ -22,7 +21,7 @@ export default function Results() {
         if (init) {
           return;
         }
-    
+
         initParticlesEngine(async (engine) => {
           await loadFull(engine);
         }).then(() => {
@@ -41,17 +40,16 @@ export default function Results() {
     <>
       <Particles options={particlesOptions} />
       <h1 style={{ zIndex: 1, color: "#F0EDCF" }}>And the winner is :</h1>
-      <div className="CardContainer">
-        {data.map((item, index) => (
-          <CardComp
-            key={item._id}
-            sr={item.srNo}
-            name={item.name}
-            // desc={item.description}
-            img={item.img}
-            vote={"false"}
-          />
-        ))}
+      <div className="CardContainerResult">
+        <CardComp
+          // key={item._id}
+          // sr={item.srNo}
+          name={data.name}
+          // desc={data.description}
+          img={data.img}
+          vote={"false"}
+        />
+        <h1 style={{color:"#F0EDCF"}}>Candidate won by : <br></br>{data.percentageWin}% votes</h1>
       </div>
     </>
   );
