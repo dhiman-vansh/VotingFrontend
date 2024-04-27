@@ -44,7 +44,7 @@ export default function PopUp(props) {
 
   const postVote = async () => {
     const token = localStorage.getItem("token");
-    if (token == "test1") {
+    if (token == "test2") {
       alert("You already voted from this device");
     } else {
       const response = await axios.put(
@@ -56,7 +56,7 @@ export default function PopUp(props) {
       alert(
         response.data == "NameError"
           ? "Your name does not exist in database"
-          : (localStorage.setItem("token", "test1"), "Vote Done")
+          : (localStorage.setItem("token", "test2"), "Vote Done")
       );
       // <Alert>You already voted from this device</Alert>
     } 
