@@ -59,7 +59,7 @@ export default function PopUp(props) {
           : (localStorage.setItem("token", "test1"), "Vote Done")
       );
       // <Alert>You already voted from this device</Alert>
-    }
+    } 
 
     setOpen(false);
   };

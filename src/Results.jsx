@@ -4,6 +4,8 @@ import { loadFull } from "tsparticles";
 import { useEffect, useState } from "react";
 import particlesOptions from "./Confetti.json";
 import CardComp from "./CardComp";
+import Box from "@mui/material/Box";
+import LinearProgress from "@mui/material/LinearProgress";
 
 export default function Results() {
   const [init, setInit] = useState(false);
@@ -49,7 +51,13 @@ export default function Results() {
           img={data.img}
           vote={"false"}
         />
-        <h1 style={{color:"#F0EDCF"}}>Candidate won by : <br></br>{data.percentageWin}% votes</h1>
+        <h1 style={{ color: "#F0EDCF" }}>
+          Candidate won by : <br></br>
+          {data.percentageWin}% votes
+        </h1>
+        <Box sx={{ width: "100%" }}>
+          <LinearProgress variant="determinate" value={data.percentageWin} />
+        </Box>
       </div>
     </>
   );

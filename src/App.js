@@ -14,7 +14,7 @@ function App() {
     <div className="App">
       {/* <FireParticles /> */}
       <Appbar />
-      {/* <Results /> */}
+      {/* <Results />/ */}
       <Candidates />
       
     </div>
